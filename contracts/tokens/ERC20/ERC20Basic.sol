@@ -53,7 +53,7 @@ contract ERC20Basic {
 
 	function transferFrom(address owner, address buyer, uint numTokens) public returns (bool) {
 		require(numTokens <= balances[owner]);
-		require(numTokens <= balances[owner][msg.sender]);
+		require(numTokens <= allowed[owner][msg.sender]);
 
 		balances[owner] = balances[owner].sub(numTokens);
 		allowed[owner][msg.sender] = allowed[owner][msg.sender].sub(numTokens);
