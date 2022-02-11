@@ -1,7 +1,9 @@
-pragma solidity ^0.4.24;
+// contracts/token/native/ERC20Basic.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
 contract ERC20Basic {
-	
+
 	string public constant name = "QubixToken";
 	string public constant symbol = "QBXC";
 	uint8 public constant decimals = 18;
@@ -20,7 +22,7 @@ contract ERC20Basic {
 	using SafeMath for uint256;
 
 
-	constructor(uint256 total) public {
+	constructor(uint256 total) {
 		totalSupply_ = total;
 		balances[msg.sender] = totalSupply_;
 	}
