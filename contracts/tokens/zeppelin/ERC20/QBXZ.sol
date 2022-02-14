@@ -1,4 +1,4 @@
-// contracts/token/zeppelin/QBXZ.sol
+// contracts/token/zeppelin/ERC20/QBXZ.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
