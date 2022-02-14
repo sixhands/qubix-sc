@@ -3,3 +3,9 @@
 
 # Build files
 /build/
+
+# Mnemonic phrase
+.secret
+
+# Addresses of deployed contracts in BSC Testnet
+contracts-addr-testnet
