@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract QBXZ is ERC20 {
-    constructor(uint256 initialSupply) ERC20("Qubix", "QBXZ") {
+contract QBXC20 is ERC20 {
+    constructor(uint256 initialSupply) ERC20("QBXC20", "Q20") {
         _mint(msg.sender, initialSupply);
     }
 }

@@ -1,5 +1,5 @@
-const Item = artifacts.require("Item");
+const QBXC721 = artifacts.require("QBXC721");
 
 module.exports = function (deployer) {
-    deployer.deploy(Item)
+    deployer.deploy(QBXC721)
 }
