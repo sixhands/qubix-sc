@@ -1,4 +1,4 @@
-// contracts/token/zeppelin/ERC777/GLDToken.sol
+// contracts/token/zeppelin/ERC777/QBXC777.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
