@@ -42,8 +42,12 @@ module.exports = {
     // options below to some value.
     //
     ganache: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
+      provider: () => new HDWalletProvider(
+          process.env.EKO_PRIVATE_KEY,
+          process.env.GANACHE_ADDRESS
+      ),
+      //host: "127.0.0.1",     // Localhost (default: none)
+      //port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
     testnet: {
