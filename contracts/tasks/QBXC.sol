@@ -1,5 +1,6 @@
 // contracts/tasks/QBXC.sol
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
@@ -9,15 +10,12 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract QBXC is ERC20, AccessControl {
     using SafeMath for uint;
 
-    // test 1
-    bytes32 public constant VK_ROLE = keccak256("VK_ROLE");
-    // test 2
+    // Wallet: qubix test 2
     bytes32 public constant EKO_ROLE = keccak256("EKO_ROLE");
 
-    address internal ekoAddress;
+    address public ekoAddress;
 
-    constructor(address vk, address eko) ERC20("Qubix infinity fungible token", "QBXC") {
-        _setupRole(VK_ROLE, vk);
+    constructor(address eko) ERC20("Qubix infinity fungible token", "QBXC") {
         _setupRole(EKO_ROLE, eko);
 
         ekoAddress = eko;
