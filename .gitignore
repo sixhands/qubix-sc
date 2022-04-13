@@ -9,3 +9,13 @@
 
 # Addresses of deployed contracts in BSC Testnet
 contracts-addr-testnet
+
+# Linters config files
+/.solhint.json
+/.soliumignore
+/.soliumrc.json
+
+/package-lock.json
+/package.json
+
+/node_modules/
