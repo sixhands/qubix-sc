@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract QBXC is ERC20, AccessControl {
+contract QBXM is ERC20, AccessControl {
     using SafeMath for uint;
 
     // Wallet: qubix test 2
