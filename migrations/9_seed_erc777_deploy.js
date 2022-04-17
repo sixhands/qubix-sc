@@ -5,11 +5,11 @@ require('@openzeppelin/test-helpers/configure')({ provider: web3.currentProvider
 
 const { singletons } = require('@openzeppelin/test-helpers');
 
-module.exports = async function (deployer, network) {
+module.exports = async function (deployer, network, accounts) {
 
     if (network === 'ganache') {
         // In a test environment an ERC777 token requires deploying an ERC1820 registry
-        await singletons.ERC1820Registry(0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24);
+        await singletons.ERC1820Registry(accounts[0]);
     }
 
     await deployer.deploy(
