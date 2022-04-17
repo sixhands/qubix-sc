@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract QBXC is ERC20, Ownable, AccessControl {
+contract TokenERC20 is ERC20, Ownable, AccessControl {
 
     bytes32 public constant SEED_ROLE = keccak256("SEED_ROLE");
 

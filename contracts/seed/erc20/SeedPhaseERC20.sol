@@ -5,17 +5,17 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./QBXC.sol";
+import "./TokenERC20.sol";
 
 contract SeedPhaseERC20 is Ownable {
     using SafeMath for uint;
 
     mapping (address => uint256) private _investorsBalances;
     address[] private _investorsAddresses;
-    QBXC private _token;
+    TokenERC20 private _token;
 
     constructor(
-        QBXC token,
+        TokenERC20 token,
         uint256[] memory investorsTokens,
         address[] memory investorsAddresses) {
 
