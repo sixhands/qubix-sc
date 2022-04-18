@@ -1,0 +1,41 @@
+{
+    "description": "The Industrial Revolution and its consequences have been a disaster for the human race.",
+    "external_url": "https://hub.qubixinfinity.io/",
+    "image": "https://hub.qubixinfinity.io/contracts/1.jpg",
+    "name": "Theodore Kaczynski",
+    "attributes": [
+        {
+            "trait_type": "Based",
+            "value": "Absolutely"
+        },
+        {
+            "trait_type": "IQ",
+            "value": "167"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "Piro power",
+            "value": 40
+        },
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Stamina Increase",
+            "value": 10
+        },
+        {
+            "display_type": "date",
+            "trait_type": "arrest",
+            "value": 828518400
+        },
+        {
+            "trait_type": "Stamina",
+            "value": 3,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Health",
+            "value": 6,
+            "max_value": 10
+        }
+    ]
+}
