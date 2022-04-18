@@ -32,18 +32,14 @@ contract SeedPhaseERC777 is IERC777Recipient, Ownable {
         uint256[] memory investorsTokens,
         address[] memory investorsAddresses) {
 
+        _investorsAddresses = investorsAddresses;
         _isTokenReceived = false;
         _percentagePaid = 0;
         _token = token;
 
         // Setting up mapping of addresses investor and tokens for them
-        for (uint i = 0; i < investorsAddresses.length; i++) {
+        for (uint8 i = 0; i < investorsAddresses.length; i++) {
             _investorsTokensToSend[investorsAddresses[i]] = investorsTokens[i];
-        }
-        _investorsAddresses = investorsAddresses;
-
-        // Setting up total tokens amount
-        for (uint i = 0; i < _investorsAddresses.length; i++) {
             _promisedTokensAmount += _investorsTokensToSend[_investorsAddresses[i]];
         }
         _promisedTokensAmount = _promisedTokensAmount * 10 ** uint256(_token.decimals());
@@ -85,7 +81,7 @@ contract SeedPhaseERC777 is IERC777Recipient, Ownable {
 
         require(_token.balanceOf(address(this)) > 0, "contract don't have any tokens");
 
-        for (uint i = 0; i < _investorsAddresses.length; i++) {
+        for (uint8 i = 0; i < _investorsAddresses.length; i++) {
 
             uint256 tokensToSend = percentage.mul(_investorsTokensToSend[_investorsAddresses[i]]).div(100);
             tokensToSend = tokensToSend * 10 ** uint256(_token.decimals());
