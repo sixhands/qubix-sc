@@ -1,0 +1,28 @@
+{
+    "description": "Versatile fighter. Equally good in both melee and ranged combat.",
+    "external_url": "https://hub.qubixinfinity.io/",
+    "image": "https://hub.qubixinfinity.io/contracts/4.jpg",
+    "name": "Goldhunter",
+    "attributes": [
+        {
+            "trait_type": "Health",
+            "value": 100,
+            "max_value": 200
+        },
+        {
+            "trait_type": "Armor",
+            "value": 10,
+            "max_value": 20
+        },
+        {
+            "trait_type": "Speed",
+            "value": 4,
+            "max_value": 5
+        },
+        {
+            "trait_type": "Strength",
+            "value": 440,
+            "max_value": 600
+        }
+    ]
+}

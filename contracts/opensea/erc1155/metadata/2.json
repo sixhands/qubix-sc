@@ -1,0 +1,28 @@
+{
+    "description": "Engineer. Able to set traps and break enemy mechanisms.",
+    "external_url": "https://hub.qubixinfinity.io/",
+    "image": "https://hub.qubixinfinity.io/contracts/2.jpg",
+    "name": "Lomix",
+    "attributes": [
+        {
+            "trait_type": "Health",
+            "value": 100,
+            "max_value": 200
+        },
+        {
+            "trait_type": "Armor",
+            "value": 0,
+            "max_value": 20
+        },
+        {
+            "trait_type": "Speed",
+            "value": 5,
+            "max_value": 5
+        },
+        {
+            "trait_type": "Strength",
+            "value": 500,
+            "max_value": 600
+        }
+    ]
+}

@@ -3,12 +3,12 @@
 
 pragma solidity ^0.8.0;
 
-import "./QBXC.sol";
+import "./QBXM.sol";
 import "./Item.sol";
 
 contract Market {
 
-    QBXC internal _QBXC;
+    QBXM internal _QBXC;
     Item internal _Item;
 
     address public ekosystem;
@@ -18,7 +18,7 @@ contract Market {
     }
 
     constructor(
-        QBXC tokenContract,
+        QBXM tokenContract,
         Item itemContract,
         address ekosystemAddress) {
 

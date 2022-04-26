@@ -1,0 +1,28 @@
+{
+    "description": "Lively and slow. Deals little damage.",
+    "external_url": "https://hub.qubixinfinity.io/",
+    "image": "https://hub.qubixinfinity.io/contracts/5.jpg",
+    "name": "Powerf",
+    "attributes": [
+        {
+            "trait_type": "Health",
+            "value": 125,
+            "max_value": 200
+        },
+        {
+            "trait_type": "Armor",
+            "value": 15,
+            "max_value": 20
+        },
+        {
+            "trait_type": "Speed",
+            "value": 3,
+            "max_value": 5
+        },
+        {
+            "trait_type": "Strength",
+            "value": 431.25,
+            "max_value": 600
+        }
+    ]
+}
