@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "../tokens/zeppelin/ERC20/QBXC20.sol";
+import "./StakingERC20.sol";
 
 contract StakingPrototype is Ownable {
     enum StakingStatus {
@@ -29,10 +29,10 @@ contract StakingPrototype is Ownable {
 
     uint256 private constant _threshold = 1 ether;
 
-    QBXC20 internal _QBXC;
+    StakingERC20 internal _StakingERC20;
 
     constructor() {
-        _QBXC = new QBXC20();
+        _StakingERC20 = new StakingERC20();
         status = StakingStatus.OPEN;
     }
 
@@ -70,7 +70,7 @@ contract StakingPrototype is Ownable {
     }
 
     function terminateContract() external onlyOwner {
-        _QBXC.transferOwnership(owner());
+        //_StakingERC20.transferOwnership(owner());
         status = StakingStatus.TERMINATED;
     }
 
@@ -122,7 +122,7 @@ contract StakingPrototype is Ownable {
         for (uint256 i = 0; i < stakers.length; i++) {
             uint256 amount = _getTokenNumToAward(stakedBalances[stakers[i]]);
 
-            _QBXC.transfer(stakers[i], amount);
+            _StakingERC20.transfer(stakers[i], amount);
 
             stakedBalances[stakers[i]] = 0;
             _userHasStaked[stakers[i]] = false;
@@ -151,7 +151,7 @@ contract StakingPrototype is Ownable {
     }
 
     function tokenBalanceOf(address _account) public view returns (uint256) {
-        return _QBXC.balanceOf(_account);
+        return _StakingERC20.balanceOf(_account);
     }
 
     function _stake() internal onlyWhenOpen {
