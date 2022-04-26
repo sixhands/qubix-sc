@@ -33,7 +33,11 @@ module.exports = {
      *
      * $ truffle test --network <network-name>
      */
-
+    // For deploying to test networks via dashboard
+    // dashboard: {
+    //     port: 24012,
+    //     host: "192.168.32.11"
+    // },
     networks: {
         // Useful for testing. The `development` name is special - truffle uses it by default
         // if it's defined here and no other network is specified at the command line.
