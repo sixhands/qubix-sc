@@ -1,27 +1,27 @@
 {
-    "description": "Warrior. Deals heavy melee damage to any enemy.",
+    "description": "Very fast, hard to catch up.",
     "external_url": "https://hub.qubixinfinity.io/",
-    "image": "https://hub.qubixinfinity.io/contracts/1.jpg",
-    "name": "Bloodlov",
+    "image": "https://hub.qubixinfinity.io/contracts/7.jpg",
+    "name": "Solaray",
     "attributes": [
         {
             "trait_type": "Health",
-            "value": 150,
+            "value": 100,
             "max_value": 200
         },
         {
             "trait_type": "Armor",
-            "value": 15,
+            "value": 0,
             "max_value": 20
         },
         {
             "trait_type": "Speed",
-            "value": 3,
+            "value": 5,
             "max_value": 5
         },
         {
             "trait_type": "Strength",
-            "value": 517.5,
+            "value": 500,
             "max_value": 600
         }
     ]

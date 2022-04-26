@@ -1,12 +1,12 @@
 {
-    "description": "Warrior. Deals heavy melee damage to any enemy.",
+    "description": "Lively and slow. Deals little damage.",
     "external_url": "https://hub.qubixinfinity.io/",
-    "image": "https://hub.qubixinfinity.io/contracts/1.jpg",
-    "name": "Bloodlov",
+    "image": "https://hub.qubixinfinity.io/contracts/5.jpg",
+    "name": "Powerf",
     "attributes": [
         {
             "trait_type": "Health",
-            "value": 150,
+            "value": 125,
             "max_value": 200
         },
         {
@@ -21,7 +21,7 @@
         },
         {
             "trait_type": "Strength",
-            "value": 517.5,
+            "value": 431.25,
             "max_value": 600
         }
     ]

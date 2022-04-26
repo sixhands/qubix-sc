@@ -1,27 +1,27 @@
 {
-    "description": "Warrior. Deals heavy melee damage to any enemy.",
+    "description": "Prevents enemies from using abilities.",
     "external_url": "https://hub.qubixinfinity.io/",
-    "image": "https://hub.qubixinfinity.io/contracts/1.jpg",
-    "name": "Bloodlov",
+    "image": "https://hub.qubixinfinity.io/contracts/6.jpg",
+    "name": "Silen",
     "attributes": [
         {
             "trait_type": "Health",
-            "value": 150,
+            "value": 100,
             "max_value": 200
         },
         {
             "trait_type": "Armor",
-            "value": 15,
+            "value": 10,
             "max_value": 20
         },
         {
             "trait_type": "Speed",
-            "value": 3,
+            "value": 4,
             "max_value": 5
         },
         {
             "trait_type": "Strength",
-            "value": 517.5,
+            "value": 440,
             "max_value": 600
         }
     ]
