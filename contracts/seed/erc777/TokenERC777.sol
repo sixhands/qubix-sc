@@ -1,4 +1,4 @@
-// conztracts/seed/erc777/TokenERC777.sol
+// contracts/seed/erc777/TokenERC777.sol
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
