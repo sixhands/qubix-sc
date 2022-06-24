@@ -10,7 +10,7 @@ module.exports = async function (deployer) {
 
     await deployer.deploy(
         Reward,
-        "0x3060f86c3c8c6C9eA9c03dD85204520E97298022",
+        "0x32289C3688CEbf515A065E7D25DC5cEFDb6E9c12",
         qbxc.address
     );
 };

@@ -10,7 +10,6 @@ import "./QBXM.sol";
 contract Reward is Ownable {
     using SafeMath for uint;
 
-    mapping(address => uint256) private claims;
     QBXM private immutable token;
 
     address public immutable ekoAddress;
@@ -23,46 +22,39 @@ contract Reward is Ownable {
     function getReward(
         address roomOwner,
         address[] calldata winners,
-        uint256 playersAmount,
         uint256 ticketsAmount,
         uint256 ticketCost
     ) public onlyOwner {
 
-        //playersAmount * ticketsAmount * ticketCost * 0.9 / winners.length;
-        uint256 reward = 1;
-        bool success;
-        (success, reward) = reward.tryMul(playersAmount);
-        (success, reward) = reward.tryMul(ticketsAmount);
-        (success, reward) = reward.tryMul(ticketCost);
-        (success, reward) = reward.tryMul(9);
-        (success, reward) = reward.tryDiv(winners.length);
-        (success, reward) = reward.tryDiv(10);
-        require(success, "Something went wrong during reward calculation..");
+        // 97% - winners, 2% - roomOwner, 1% - fees
 
-//        increaseAllowance(ekoAddress, reward.mul(winners.length));
+        bool isCalculationSuccessful;
 
-        for (uint256 i = 0; i < winners.length; i++) {
-            setClaim(winners[i], reward);
+        // All reward
+        uint256 allReward;
+        (isCalculationSuccessful, allReward) = ticketCost.tryMul(ticketsAmount);
+        (isCalculationSuccessful, allReward) = allReward.tryMul(10 ** uint256(token.decimals()));
+
+        // Room winners reward
+        uint256 winnersReward = allReward;
+        (isCalculationSuccessful, winnersReward) = winnersReward.tryMul(97);
+        (isCalculationSuccessful, winnersReward) = winnersReward.tryDiv(100);
+        (isCalculationSuccessful, winnersReward) = winnersReward.tryDiv(winners.length);
+
+        // Room owner reward
+        uint256 roomOwnerReward = allReward;
+        (isCalculationSuccessful, roomOwnerReward) = roomOwnerReward.tryMul(2);
+        (isCalculationSuccessful, roomOwnerReward) = roomOwnerReward.tryDiv(100);
+
+
+        require(isCalculationSuccessful, "Something went wrong during reward calculation..");
+
+        token.increaseAllowance(ekoAddress, allReward);
+
+        for (uint8 i = 0; i < winners.length; i++) {
+            token.transfer(winners[i], winnersReward);
         }
 
-//        increaseAllowance(ekoAddress, reward.div(18));
-        setClaim(roomOwner, reward.div(18));
-    }
-
-    function transferClaimedTokens(address _player, uint256 _amountToTransfer) public onlyOwner {
-        require(_player != address(0), "transfer to the zero address");
-        require(token.balanceOf(address(this)) > _amountToTransfer, "insufficient balance of contract");
-
-        token.approve(address(this), _amountToTransfer);
-        token.transferFrom(address(this), _player, _amountToTransfer);
-    }
-
-    function viewClaimedTokens(address _player) public view returns (uint256) {
-        return claims[_player];
-    }
-
-    function setClaim(address _player, uint256 amountToClaim) private {
-        require(_player != address(0), "claim to the zero address");
-        claims[_player] += amountToClaim;
+        token.transfer(roomOwner, roomOwnerReward);
     }
 }
